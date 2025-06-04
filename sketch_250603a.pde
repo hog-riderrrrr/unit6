@@ -5,20 +5,31 @@ final int pause = 3;
 final int gameover = 4;
 float ballx, bally;
 float vx, vy;
-float paddlex;
+float playerx;
 boolean leftkey, rightkey;
-
+boolean playercollideleft, playercollideright;
+float playerspeedleft, playerspeedright;
+float constant;
 
 
 
 void setup() {
   size(1000, 800);
-  background(0);
   mode = intro;
+  playerspeedleft = -10;
+  playerspeedright = 10;
+  playerx = 500;
+  ballx = 500;
+  bally = 600;
+  vx = 0;
+  vy = -12;
+  constant = 4;
   
 }
 
 void draw() {
+  background(0);
+  
   if(mode == intro){
     intro();
   } else if(mode == game){

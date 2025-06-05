@@ -1,4 +1,20 @@
 void game(){
+  background(0);
+  
+  
+  
+  fill(250);
+  
+  //circle(x[0], y[0], 30);
+  //circle(x[1], y[1], 30);
+  //circle(x[2], y[2], 30);
+  
+  int i = 0;
+  while (i < n) {
+    circle(x[n], y[n], 30);
+    i = i + 1;
+  
+  
   
   
   circle(ballx, bally, 20);
@@ -58,6 +74,7 @@ void game(){
   
   
   
+}
 }
 
 void gameclicks() {

@@ -10,7 +10,10 @@ boolean leftkey, rightkey;
 boolean playercollideleft, playercollideright;
 float playerspeedleft, playerspeedright;
 float constant;
-
+int[] x;
+int[] y;
+int n;
+int tempx, tempy;
 
 
 void setup() {
@@ -24,24 +27,36 @@ void setup() {
   vx = 0;
   vy = -12;
   constant = 4;
-  
+
+  n = 30;
+  x = new int[n];
+  y = new int[n];
+  tempx = 100;
+  tempy = 100;
+  int i = 0;
+  while (i < n) {
+    x[i] = tempx;
+    y[i] = tempy;
+    tempx = tempx + 100;
+    if (tempx == width) {
+      tempx = 100;
+      tempy = tempy + 100;
+    }
+  }
 }
 
 void draw() {
   background(0);
-  
-  if(mode == intro){
+
+  if (mode == intro) {
     intro();
-  } else if(mode == game){
+  } else if (mode == game) {
     game();
-  } else if(mode == pause){
+  } else if (mode == pause) {
     pause();
-  } else if(mode == gameover){
+  } else if (mode == gameover) {
     gameover();
   } else {
     print("mode error");
   }
-  
-  
-  
 }

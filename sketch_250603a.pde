@@ -14,6 +14,7 @@ int[] x;
 int[] y;
 int n;
 int tempx, tempy;
+boolean[] alive;
 
 
 void setup() {
@@ -27,8 +28,9 @@ void setup() {
   vx = 0;
   vy = -12;
   constant = 4;
+  
 
-  n = 30;
+  n = 27;
   x = new int[n];
   y = new int[n];
   tempx = 100;
@@ -37,12 +39,16 @@ void setup() {
   while (i < n) {
     x[i] = tempx;
     y[i] = tempy;
+    alive[i] = true;
     tempx = tempx + 100;
     if (tempx == width) {
       tempx = 100;
       tempy = tempy + 100;
     }
+    i = i + 1;
   }
+
+
 }
 
 void draw() {

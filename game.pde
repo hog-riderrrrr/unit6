@@ -4,15 +4,17 @@ void game(){
   
   
   fill(250);
+
   
-  //circle(x[0], y[0], 30);
-  //circle(x[1], y[1], 30);
-  //circle(x[2], y[2], 30);
-  
-  int i = 0;
-  while (i < n) {
-    circle(x[n], y[n], 30);
-    i = i + 1;
+  int j = 0;
+  while (j < n) {
+    circle(x[j], y[j], 45);
+    if(dist(ballx, bally, x[j], y[j]) < 20/2 + 30/2) {
+      vx = (ballx - x[j]) / constant;
+      vy = (bally - y[j]) / constant;
+    }
+    j = j + 1;
+    }
   
   
   
@@ -36,8 +38,8 @@ void game(){
   }
   
   if(dist(ballx, bally, playerx, 750) <= 40){   
-    vx = (ballx - playerx) / constant;
-    vy = (bally - 750) / constant;
+    vx = (ballx - playerx) / constant + 0.5;
+    vy = (bally - 750) / constant + 0.5;
   }
   
   
@@ -74,7 +76,6 @@ void game(){
   
   
   
-}
 }
 
 void gameclicks() {

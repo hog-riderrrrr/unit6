@@ -15,6 +15,8 @@ int[] y;
 int n;
 int tempx, tempy;
 boolean[] alive;
+boolean pkey;
+int score;
 
 
 void setup() {
@@ -28,13 +30,16 @@ void setup() {
   vx = 0;
   vy = -12;
   constant = 4;
+  score = 0;
   
-
   n = 27;
   x = new int[n];
   y = new int[n];
+  alive = new boolean[n];
   tempx = 100;
   tempy = 100;
+  
+  
   int i = 0;
   while (i < n) {
     x[i] = tempx;

@@ -8,5 +8,7 @@ void keyPressed(){
 void keyReleased(){
   if(key == 'a' || key == 'A' || keyCode == LEFT) leftkey = false;
   if(key == 'd' || key == 'D' || keyCode == RIGHT) rightkey = false;
-  
+  if((mode == game || mode == pause) && (key == 'p' || key == 'P')) {
+    pkey = true;
+  }
 }

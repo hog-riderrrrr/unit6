@@ -18,9 +18,20 @@ boolean[] alive;
 boolean pkey;
 int score;
 
+PImage[] gif;
+int numberofframes;
+
 
 void setup() {
   size(1000, 800);
+  numberofframes = 30;
+  gif = new PImage[numberofframes];
+  int j = 0;
+while( j < numberofframes){
+  gif[j] = loadImage("frame"+ j + "delay-0.03s.gif");
+}
+  
+  
   mode = intro;
   playerspeedleft = -10;
   playerspeedright = 10;

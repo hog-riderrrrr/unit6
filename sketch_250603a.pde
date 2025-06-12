@@ -20,6 +20,7 @@ int score;
 
 PImage[] gif;
 int numberofframes;
+int frame;
 
 
 void setup() {
@@ -27,11 +28,12 @@ void setup() {
   numberofframes = 30;
   gif = new PImage[numberofframes];
   int j = 0;
-while( j < numberofframes){
-  gif[j] = loadImage("frame"+ j + "delay-0.03s.gif");
-}
-  
-  
+  while ( j < numberofframes) {
+    gif[j] = loadImage("frame_"+ j + "_delay-0.03s.gif");
+  }
+  frame = 0;
+
+
   mode = intro;
   playerspeedleft = -10;
   playerspeedright = 10;
@@ -42,15 +44,15 @@ while( j < numberofframes){
   vy = -12;
   constant = 4;
   score = 0;
-  
+
   n = 27;
   x = new int[n];
   y = new int[n];
   alive = new boolean[n];
   tempx = 100;
   tempy = 100;
-  
-  
+
+
   int i = 0;
   while (i < n) {
     x[i] = tempx;
@@ -63,8 +65,6 @@ while( j < numberofframes){
     }
     i = i + 1;
   }
-
-
 }
 
 void draw() {

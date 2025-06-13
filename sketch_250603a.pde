@@ -30,6 +30,7 @@ void setup() {
   int j = 0;
   while ( j < numberofframes) {
     gif[j] = loadImage("frame_"+ j + "_delay-0.03s.gif");
+    j++;
   }
   frame = 0;
 
